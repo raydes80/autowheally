@@ -93,8 +93,7 @@ function App() {
               </Grid>
           </Grid>
 
-
-          {pwdError && <div className='error'>Incorrect password, try again<</div>}
+          {pwdError && <div className='error'>Incorrect pássword, try again</div>}
           <input type="submit" value="Continue" />
 
       </form>
