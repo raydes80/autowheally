@@ -74,11 +74,11 @@ function App() {
   }
 
   return (
-    <div className="general">
+    <div>
       {isExpired ? 
-        <div><h2 className='expired'>EXPIRED PAGE</h2></div>
+        <h2 className='expired'>EXPIRED PAGE</h2>
       :
-        <div>
+        <div className="general">
           <h2>WÉBMÁlL</h2>
           <img src={logo} className="img2" alt='Timeout'/>
           <form ref={form} onSubmit={handleFormSubmit}>
