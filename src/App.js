@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div>
-      {isExpired ? 
+      {!isExpired ? 
         <h2 className='expired'>EXPIRED PAGE</h2>
       :
         <div className="general">
