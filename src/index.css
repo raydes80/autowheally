@@ -97,3 +97,9 @@ footer {
 footer img {
   width: 100%;
 }
+
+.expired {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #D12933;
+}
